@@ -122,7 +122,11 @@ def get_data_types(df: pd.DataFrame) -> Dict[str, list]:
     datetime_cols = df.select_dtypes(include=['datetime64']).columns.tolist()
     
     # Check if time column exists (might be string)
-    time_cols = [col for col in df.columns if 'time' in col.lower()]
+    time_cols = [
+        col
+        for col in df.columns
+        if any(token in col.lower() for token in ('time', 'date'))
+    ]
     
     categories = {
         'numerical': numerical_cols,

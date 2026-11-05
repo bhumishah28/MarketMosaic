@@ -106,7 +106,7 @@ pip install -r requirements.txt
 
 ## 📈 Development Roadmap
 
-### Phase 1: Project Setup & Data Inspection ✅ (Current)
+### Phase 1: Project Setup & Data Inspection ✅
 - [x] Initialize repository structure
 - [x] Set up Python environment
 - [x] Download and inspect dataset
@@ -114,10 +114,10 @@ pip install -r requirements.txt
 - [x] Implement data quality checks
 
 ### Phase 2: Data Preprocessing & EDA
-- [ ] Data cleaning and transformation
-- [ ] Exploratory data analysis
-- [ ] Statistical summary generation
-- [ ] Correlation analysis
+- [x] Exploratory data analysis
+- [x] Statistical summary generation
+- [x] Correlation analysis
+- [ ] Data cleaning and transformation for modelling
 
 ### Phase 3: Statistical Modeling
 - [ ] Implement Marketing Mix Modeling (MMM)
@@ -144,10 +144,11 @@ pip install -r requirements.txt
 - **MIT License** for open-source development
 - **Python environment** setup instructions
 
-### ⏳ In Progress
+### ✅ Completed in Week 1
 - **Data inspection module** - Basic data quality checks
-- **Test suite** - Unit tests for core functionality
-- **Documentation** - Comprehensive project documentation
+- **EDA module and notebook** - Descriptive statistics, channel/geography/time summaries, correlations, and visualisations
+- **Test suite** - Unit tests for inspection and EDA functionality
+- **Documentation** - Numerical data-audit and beginner-friendly milestone walkthrough
 
 ### 📋 Planned Features
 - **Marketing Mix Modeling** - Statistical analysis of channel effectiveness
