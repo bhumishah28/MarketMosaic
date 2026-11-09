@@ -52,7 +52,8 @@ Modern businesses allocate budgets across diverse marketing channels (Google Ads
 
 ### Future Additions
 - **FastAPI** - REST API development
-- **PostgreSQL** - Data storage
+- **MySQL 8.x** - Relational data storage
+- **SQLAlchemy/PyMySQL** - Database access
 - **Docker** - Containerization
 - **AWS/GCP** - Cloud deployment
 - **Streamlit/Dash** - Interactive dashboards
@@ -155,6 +156,18 @@ pip install -r requirements.txt
 - **Budget optimization** - Mathematical optimization of spend allocation
 - **Interactive dashboards** - Business user visualization interface
 - **Production API** - REST API for integration with other systems
+
+### Current ETL implementation
+
+Reusable ETL modules live under `src/database` and `src/ingestion`. Run an
+offline extraction/transformation reconciliation with:
+
+```bash
+python -m src.ingestion.run --dry-run
+```
+
+Set `MYSQL_HOST`, `MYSQL_PORT`, `MYSQL_DATABASE`, `MYSQL_USER`, and
+`MYSQL_PASSWORD` (or use a local `.env` file) before running the database load.
 
 ## 🔍 Dataset Information
 

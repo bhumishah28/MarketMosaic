@@ -7,6 +7,8 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import seaborn as sns
 
+from validation import validate_dataset
+
 
 CHANNELS = [f"Channel{i}" for i in range(5)]
 SPEND_COLUMNS = [f"{channel}_spend" for channel in CHANNELS]
@@ -32,7 +34,7 @@ def data_quality_report(data: pd.DataFrame) -> Dict[str, object]:
     """Return explicit checks used to decide whether the panel is well formed."""
     unnamed = data["Unnamed: 0"]
     expected_index = pd.Series(range(len(data)), index=unnamed.index)
-    return {
+    quality = {
         "missing_cells": int(data.isna().sum().sum()),
         "exact_duplicates": int(data.duplicated().sum()),
         "geo_time_duplicates": int(data.duplicated(["geo", "time"]).sum()),
@@ -44,6 +46,10 @@ def data_quality_report(data: pd.DataFrame) -> Dict[str, object]:
         "rows_per_geo": data.groupby("geo").size().to_dict(),
         "periods_per_geo": data.groupby("geo")["time"].nunique().to_dict(),
     }
+    quality["validation"] = validate_dataset(
+        data.drop(columns=["time_dt"], errors="ignore")
+    )
+    return quality
 
 
 def channel_summary(data: pd.DataFrame) -> pd.DataFrame:

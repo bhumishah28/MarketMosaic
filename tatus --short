@@ -1,0 +1,7 @@
+warning: in the working copy of 'README.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'pyproject.toml', LF will be replaced by CRLF the next time Git touches it
+ README.md        | 15 [32m++++++++++++++[m[31m-[m
+ pyproject.toml   |  4 [32m++++[m
+ requirements.txt |  4 [32m+++[m[31m-[m
+ src/eda.py       |  8 [32m+++++++[m[31m-[m
+ 4 files changed, 28 insertions(+), 3 deletions(-)
